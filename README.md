@@ -3,6 +3,8 @@ A enhancement of Pokéclicker by adding more events and more custom pokemons.
 
 Adds requested events and custom mixed pokemons.
 
+For contributors : **Please note that scripts are made for Tampermonkey extension.**
+
 ## Events
 These events are planned at the start of the project.
 They can also be done.
