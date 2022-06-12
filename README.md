@@ -6,6 +6,8 @@ Adds requested events and custom mixed pokemons.
 For contributors : **Please note that scripts are made for Tampermonkey extension.**
 
 ## Events
+___Scripts by Ephenia, modified by EleckFan5935___
+
 These events are planned at the start of the project.
 They can also be done.
 - [ ] Latias and Latios : **Bosses of Sky Pillar** *(removing roamer status)*
