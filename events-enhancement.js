@@ -21,7 +21,7 @@ function initEvents() {
     SpecialEvents.newEvent('Origin Giratina', 'Encounter Origin Giratina that roams when Distortion World finished.',
         startDate, () => {
             GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
-                RoamingPokemonList.add(region, new RoamingPokemon('Giratina (Origin Form)'));
+                RoamingPokemonList.add(region, new RoamingPokemon('Giratina (Origin Form)' {requirement: new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Distortion World'))}));
             });
         },
         endDate, () => {
