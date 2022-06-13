@@ -21,24 +21,24 @@ function initEvents() {
     SpecialEvents.newEvent('Origin Giratina', 'Encounter Origin Giratina that roams when Distortion World finished.',
         startDate, () => {
             GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
-                RoamingPokemonList.add(region, new RoamingPokemon('Giratina (Origin Form)' {requirement: new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Distortion World'))}));
+                RoamingPokemonList.add(region, new RoamingPokemon('Giratina (Origin)' {requirement: new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Distortion World'))}));
             });
         },
         endDate, () => {
             GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
-                RoamingPokemonList.remove(region, 'Giratina (Origin Form)');
+                RoamingPokemonList.remove(region, 'Giratina (Origin)');
             });
         }
     );
     SpecialEvents.newEvent('Mew as Boss', 'Encounter Mew in Cerulean Cave as a boss.')
         startDate, () => {
-            GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
-                RoamingPokemonList.add(region, new RoamingPokemon('Giratina (Origin Form)' {requirement: new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Distortion World'))}));
+            GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Kanto).forEach(region => {
+                RoamingPokemonList.remove(region, 'Mew');
             });
         },
         endDate, () => {
-            GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
-                RoamingPokemonList.remove(region, 'Giratina (Origin Form)');
+            GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Kanto).forEach(region => {
+                RoamingPokemonList.add(region, new RoamingPokemon('Mew'));
             });
         }
     );
@@ -155,7 +155,7 @@ function loadScript(){
     }
 }
 
-var scriptName = 'infiniteseasonalevents'
+var scriptName = 'customevents'
 
 if (document.getElementById('scriptHandler') != undefined){
     var scriptElement = document.createElement('div')
