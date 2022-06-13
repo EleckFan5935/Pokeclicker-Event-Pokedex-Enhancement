@@ -30,6 +30,18 @@ function initEvents() {
             });
         }
     );
+    SpecialEvents.newEvent('Mew as Boss', 'Encounter Mew in Cerulean Cave as a boss.')
+        startDate, () => {
+            GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
+                RoamingPokemonList.add(region, new RoamingPokemon('Giratina (Origin Form)' {requirement: new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Distortion World'))}));
+            });
+        },
+        endDate, () => {
+            GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
+                RoamingPokemonList.remove(region, 'Giratina (Origin Form)');
+            });
+        }
+    );
 
     //Testing loading events in init
     for (var i = 0; i < getEvents.length; i++) {
