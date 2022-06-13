@@ -13,6 +13,7 @@ They can also be done.
 - [ ] Latias and Latios : **Bosses of Sky Pillar** *(removing roamer status)*
 - [ ] Entei, Raikou and Suicune : **Bosses of Burned Tower** *(removing roamer status)*
 - [ ] Mew : **Boss of Cerulean Cave** *(removing roamer status)*
+- [ ] Origin Giratina : **Sinnoh Roamer after defeating Distortion World** *(make Origin Giratina obtainable)*
 
 Don't hesitate to create a issue for a new event.
 Issues approved by developers and contributors are there.
