@@ -29,7 +29,7 @@ No custom Pokémon planned by issue.
 
 ## (New) Battle Frontier Rewards
 Adds more rewards to Battle Frontier, like roamers and legendaries.
-Please note that this function is in Beta and will likely change in future.
+Please note that this function is in Beta and will likely change in future. These are the ones we wanted at developpement start.
 
 - [ ] Jirachi : Stage 500 instead of roamer status *(Jirachi is roamer, awe want to also add her to Battle Frontier.)*
 
