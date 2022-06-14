@@ -21,12 +21,26 @@ function initEvents() {
     SpecialEvents.newEvent('Origin Giratina', 'Encounter Origin Giratina that roams when Distortion World finished.',
         startDate, () => {
             GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
-                RoamingPokemonList.add(region, new RoamingPokemon('Giratina (Origin Form)' {requirement: new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Distortion World'))}));
+                RoamingPokemonList.add(region, new RoamingPokemon('Giratina (Origin)' {requirement: new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Distortion World'))}));
             });
         },
         endDate, () => {
             GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Sinnoh).forEach(region => {
-                RoamingPokemonList.remove(region, 'Giratina (Origin Form)');
+                RoamingPokemonList.remove(region, 'Giratina (Origin)');
+            });
+        }
+    );
+    SpecialEvents.newEvent('Mew as Boss', 'Encounter Mew in Cerulean Cave as a boss.')
+        startDate, () => {
+            GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Kanto).forEach(region => {
+                RoamingPokemonList.remove(region, 'Mew');
+                dungeonList['Cerulean Cave'].bossList.push(new DungeonBossPokemon('Mew', 138000, 70));
+            });
+        },
+        endDate, () => {
+            GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Kanto).forEach(region => {
+                dungeonList['Cerulean Cave'].bossList = dungeonList['Cerulean Cave'].bossList.filter(boss => boss.name != 'Mew');
+                RoamingPokemonList.add(region, new RoamingPokemon('Mew'));
             });
         }
     );
@@ -97,6 +111,12 @@ function initEvents() {
                 <img src="assets/images/pokemon/487.1.png">
                 </div><hr>`
                 break
+            case "Mew as Boss":
+                modalBody.innerHTML +=
+                `<div id="event-`+i+`" class="event-select" data-value="`+i+`"><b>`+getEvents[i].title+`</b><br>`+getEvents[i].description+`<br>
+                <img src="assets/images/pokemon/151.png">
+                </div><hr>`
+                break
             default:
                 modalBody.innerHTML +=
                 `<div id="event-`+i+`" class="event-select" data-value="`+i+`"><b>`+getEvents[i].title+`</b><br>`+getEvents[i].description+`<br><br>New event, Pokemon images coming soon, if not open an issue on github
@@ -143,7 +163,7 @@ function loadScript(){
     }
 }
 
-var scriptName = 'infiniteseasonalevents'
+var scriptName = 'customevents'
 
 if (document.getElementById('scriptHandler') != undefined){
     var scriptElement = document.createElement('div')
