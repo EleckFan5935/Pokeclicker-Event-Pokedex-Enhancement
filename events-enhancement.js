@@ -34,10 +34,12 @@ function initEvents() {
         startDate, () => {
             GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Kanto).forEach(region => {
                 RoamingPokemonList.remove(region, 'Mew');
+                dungeonList['Cerulean Cave'].bossList.push(new DungeonBossPokemon('Mew', 138000, 70));
             });
         },
         endDate, () => {
             GameHelper.enumNumbers(GameConstants.Region).filter(i => i != GameConstants.Region.Kanto).forEach(region => {
+                dungeonList['Cerulean Cave'].bossList = dungeonList['Cerulean Cave'].bossList.filter(boss => boss.name != 'Mew');
                 RoamingPokemonList.add(region, new RoamingPokemon('Mew'));
             });
         }
@@ -107,6 +109,12 @@ function initEvents() {
                 modalBody.innerHTML +=
                 `<div id="event-`+i+`" class="event-select" data-value="`+i+`"><b>`+getEvents[i].title+`</b><br>`+getEvents[i].description+`<br>
                 <img src="assets/images/pokemon/487.1.png">
+                </div><hr>`
+                break
+            case "Mew as Boss":
+                modalBody.innerHTML +=
+                `<div id="event-`+i+`" class="event-select" data-value="`+i+`"><b>`+getEvents[i].title+`</b><br>`+getEvents[i].description+`<br>
+                <img src="assets/images/pokemon/151.png">
                 </div><hr>`
                 break
             default:
