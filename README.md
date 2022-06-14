@@ -10,6 +10,8 @@ ___Scripts by Ephenia, modified by EleckFan5935___
 
 These events are planned at the start of the project.
 They can also be done.
+__Please note that even if pull request is merged, only tested, merged and functionnal will be check as done.__
+
 - [ ] Latias and Latios : **Bosses of Sky Pillar** *(removing roamer status)*
 - [ ] Entei, Raikou and Suicune : **Bosses of Burned Tower** *(removing roamer status)*
 - [ ] Mew : **Boss of Cerulean Cave** *(removing roamer status)*
